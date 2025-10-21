@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29230.47
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6A702CE5-5B21-4777-B6E5-7F9209B8ADD9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReportPortal.XUnitReporter.V3", "src\ReportPortal.XUnitReporter.V3\ReportPortal.XUnitReporter.V3.csproj", "{D029C3C0-A809-4078-AD06-BBE56A48C82F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D029C3C0-A809-4078-AD06-BBE56A48C82F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D029C3C0-A809-4078-AD06-BBE56A48C82F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D029C3C0-A809-4078-AD06-BBE56A48C82F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D029C3C0-A809-4078-AD06-BBE56A48C82F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D029C3C0-A809-4078-AD06-BBE56A48C82F} = {6A702CE5-5B21-4777-B6E5-7F9209B8ADD9}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {688540DC-82FD-4C6D-9F4A-D255258B687A}
+	EndGlobalSection
+EndGlobal
