@@ -12,7 +12,7 @@
         <PackageProjectUrl>https://reportportal.io</PackageProjectUrl>
 
         <RepositoryType>GitHub</RepositoryType>
-        <RepositoryUrl>https://github.com/reportportal/agent-net-xunit</RepositoryUrl>
+        <RepositoryUrl>https://github.com/reportportal/agent-dotnet-xunit.v3</RepositoryUrl>
 
         <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
         <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>

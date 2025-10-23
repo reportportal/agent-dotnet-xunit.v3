@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <!-- This target runs before compilation to include the auto-registration file -->
-  <Target Name="_ReportPortalIncludeAutoRegistration" BeforeTargets="BeforeCompile">
+  <Target Name="_ReportPortalIncludeAutoRegistration" BeforeTargets="CoreCompile">
     
     <!-- Include the auto-registration file for C# projects -->
     <ItemGroup Condition=" '$(Language)' == 'C#' ">

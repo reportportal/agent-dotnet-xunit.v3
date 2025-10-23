@@ -24,12 +24,12 @@ Add `ReportPortal.json` file to the test project.
 
 ```json
 {
-  "$schema": "https://raw.githubusercontent.com/reportportal/agent-net-xunit/master/src/ReportPortal.XUnitReporter/ReportPortal.config.schema",
+  "$schema": "https://raw.githubusercontent.com/reportportal/agent-dotnet-xunit.v3/main/src/ReportPortal.XUnitReporter.V3/ReportPortal.config.schema",
   "enabled": true,
   "server": {
     "url": "https://rp.epam.com/api/v1/",
     "project": "default_project",
-    "apiKey": "aa19555c-c9ce-42eb-bb11-87757225d535"
+    "apiKey": "<your_rp_api_key_here>"
   },
   "launch": {
     "name": "XUnit Demo Launch",

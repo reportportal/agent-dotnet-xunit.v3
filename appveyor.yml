@@ -1,4 +1,4 @@
-﻿image: Visual Studio 2019
+image: Visual Studio 2019
 
 environment:
   IGNORE_NORMALISATION_GIT_HEAD_MOVE: 1
@@ -19,9 +19,9 @@ build_script:
 
     dotnet pack
 
-    7z a reportportal-%GitVersion_SemVer%-net462.zip ./src/ReportPortal.XUnitReporter/bin/%configuration%/net462/ReportPortal*
+    7z a reportportal-%GitVersion_SemVer%-net462.zip ./src/ReportPortal.XUnitReporter.V3/bin/%configuration%/net462/ReportPortal*
 
-    7z a reportportal-%GitVersion_SemVer%-netcoreapp3.1.zip ./src/ReportPortal.XUnitReporter/bin/%configuration%/netcoreapp3.1/ReportPortal*
+    7z a reportportal-%GitVersion_SemVer%-netcoreapp3.1.zip ./src/ReportPortal.XUnitReporter.V3/bin/%configuration%/netcoreapp3.1/ReportPortal*
 
 test: off
 

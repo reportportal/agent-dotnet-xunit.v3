@@ -3,9 +3,7 @@
   "server": {
     "url": "https://rp.epam.com/api/v1/",
     "project": "default_project",
-    "authentication": {
-      "uuid": "7853c7a9-7f27-43ea-835a-cab01355fd17"
-    }
+    "apiKey": "<your_rp_api_key_here>"
   },
   "launch": {
     "name": "xUnit Demo Launch",

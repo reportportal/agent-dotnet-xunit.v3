@@ -3,6 +3,7 @@ using ReportPortal.Client.Abstractions.Requests;
 using ReportPortal.Client.Abstractions.Responses;
 using ReportPortal.Shared.Reporter;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Text.Json;
 using ReportPortal.XUnitReporter.V3.LogHandler.Messages;
@@ -210,8 +211,9 @@ namespace ReportPortal.XUnitReporter.V3
         }
 
         // key: scope id, value: according test reporter
-        private Dictionary<string, ITestReporter> _nestedScopes = new Dictionary<string, ITestReporter>();
-
+        private readonly ConcurrentDictionary<string, ITestReporter> _nestedScopes 
+            = new ConcurrentDictionary<string, ITestReporter>();
+        
         private void HandleAddLogCommunicationAction(ITestReporter testReporter, AddLogCommunicationMessage logMessage)
         {
             var logRequest = new CreateLogItemRequest
@@ -269,7 +271,7 @@ namespace ReportPortal.XUnitReporter.V3
             };
 
             _nestedScopes[endScopeMessage.Id].Finish(finishNestedStepRequest);
-            _nestedScopes.Remove(endScopeMessage.Id);
+            _nestedScopes.TryRemove(endScopeMessage.Id, out _);
         }
     }
 }
