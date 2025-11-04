@@ -6,7 +6,7 @@ namespace Xunit
     {
         public static ITestOutputHelper WithReportPortal(this ITestOutputHelper outputHelper)
         {
-            ReportPortal.XUnitReporter.V3.LogHandler.LogHandler.XunitTestOutputHelper = outputHelper;
+            ReportPortal.XUnitReporter.LogHandler.LogHandler.XunitTestOutputHelper = outputHelper;
 
             return outputHelper;
         }

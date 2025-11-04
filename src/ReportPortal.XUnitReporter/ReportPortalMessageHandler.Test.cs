@@ -2,16 +2,16 @@
 using ReportPortal.Client.Abstractions.Requests;
 using ReportPortal.Client.Abstractions.Responses;
 using ReportPortal.Shared.Reporter;
+using ReportPortal.XUnitReporter.LogHandler.Messages;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Text.Json;
-using ReportPortal.XUnitReporter.V3.LogHandler.Messages;
 using Xunit.Runner.Common;
 using Xunit.Sdk;
 
 
-namespace ReportPortal.XUnitReporter.V3
+namespace ReportPortal.XUnitReporter
 {
     public partial class ReportPortalReporterMessageHandler
     {
@@ -211,9 +211,9 @@ namespace ReportPortal.XUnitReporter.V3
         }
 
         // key: scope id, value: according test reporter
-        private readonly ConcurrentDictionary<string, ITestReporter> _nestedScopes 
+        private readonly ConcurrentDictionary<string, ITestReporter> _nestedScopes
             = new ConcurrentDictionary<string, ITestReporter>();
-        
+
         private void HandleAddLogCommunicationAction(ITestReporter testReporter, AddLogCommunicationMessage logMessage)
         {
             var logRequest = new CreateLogItemRequest

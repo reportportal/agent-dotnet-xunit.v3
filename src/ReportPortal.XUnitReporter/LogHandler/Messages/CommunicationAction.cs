@@ -1,4 +1,4 @@
-﻿namespace ReportPortal.XUnitReporter.V3.LogHandler.Messages
+﻿namespace ReportPortal.XUnitReporter.LogHandler.Messages
 {
     enum CommunicationAction
     {

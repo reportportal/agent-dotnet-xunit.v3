@@ -5,7 +5,7 @@ using System;
 using Xunit.Runner.Common;
 using Xunit.Sdk;
 
-namespace ReportPortal.XUnitReporter.V3
+namespace ReportPortal.XUnitReporter
 {
     public partial class ReportPortalReporterMessageHandler
     {

@@ -10,9 +10,9 @@ using System.Threading;
 using Xunit.Runner.Common;
 using Xunit.Sdk;
 
-namespace ReportPortal.XUnitReporter.V3
+namespace ReportPortal.XUnitReporter
 {
-    public partial class ReportPortalReporterMessageHandler  
+    public partial class ReportPortalReporterMessageHandler
     {
         /// <summary>
         /// Starting connect to report portal. Create launcher and start it.
@@ -47,7 +47,7 @@ namespace ReportPortal.XUnitReporter.V3
                 Logger.LogError(exp.ToString());
             }
         }
-        
+
 
         protected virtual void TestAssemblyExecutionFinished(MessageHandlerArgs<ITestAssemblyFinished> args)
         {

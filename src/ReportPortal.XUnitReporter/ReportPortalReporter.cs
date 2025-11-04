@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Xunit.Runner.Common;
 using Xunit.Sdk;
 
-namespace ReportPortal.XUnitReporter.V3
+namespace ReportPortal.XUnitReporter
 {
     public class ReportPortalReporter : IRunnerReporter
     {

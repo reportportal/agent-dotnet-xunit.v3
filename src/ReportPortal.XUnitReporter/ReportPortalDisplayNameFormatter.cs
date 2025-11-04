@@ -2,7 +2,7 @@
 using System.Threading;
 using Xunit.Abstractions;
 
-namespace ReportPortal.XUnitReporter.V3
+namespace ReportPortal.XUnitReporter
 {
     public class ReportPortalDisplayNameFormatter
     {

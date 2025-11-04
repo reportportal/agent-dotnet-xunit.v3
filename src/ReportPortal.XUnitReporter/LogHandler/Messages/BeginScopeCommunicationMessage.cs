@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ReportPortal.XUnitReporter.V3.LogHandler.Messages
+namespace ReportPortal.XUnitReporter.LogHandler.Messages
 {
     class BeginScopeCommunicationMessage : BaseCommunicationMessage
     {

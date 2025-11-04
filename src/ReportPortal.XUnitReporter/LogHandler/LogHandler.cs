@@ -3,17 +3,17 @@ using ReportPortal.Shared.Execution.Logging;
 using ReportPortal.Shared.Extensibility;
 using ReportPortal.Shared.Extensibility.Commands;
 using ReportPortal.Shared.Internal.Logging;
+using ReportPortal.XUnitReporter.LogHandler.Messages;
 using System;
 using System.Collections.Concurrent;
 using System.IO;
 using System.Reflection;
 using System.Text.Json;
-using ReportPortal.XUnitReporter.V3.LogHandler.Messages;
 using Xunit;
 using Xunit.Runner.Common;
 using Xunit.Sdk;
 
-namespace ReportPortal.XUnitReporter.V3.LogHandler
+namespace ReportPortal.XUnitReporter.LogHandler
 {
     public class LogHandler : ICommandsListener
     {
@@ -118,7 +118,7 @@ namespace ReportPortal.XUnitReporter.V3.LogHandler
         private void NotifyAgent(ITestOutputHelper outputHelper, string serializedMessage)
         {
             var type = outputHelper.GetType();
-            
+
             var testMember = type.GetField("test", BindingFlags.Instance | BindingFlags.NonPublic);
             var test = testMember.GetValue(outputHelper);
 
@@ -127,11 +127,11 @@ namespace ReportPortal.XUnitReporter.V3.LogHandler
 
             var messageBusType = messageBusValue.GetType();
             var m = messageBusType.GetMethod("QueueMessage", BindingFlags.Instance | BindingFlags.Public);
-    
+
             var iTest = (ITest)test;
 
-            var testOutput = new TestOutput 
-            { 
+            var testOutput = new TestOutput
+            {
                 TestUniqueID = iTest.UniqueID,
                 TestCaseUniqueID = iTest.TestCase.UniqueID,
                 TestMethodUniqueID = iTest.TestCase.TestMethod.UniqueID,
@@ -140,7 +140,7 @@ namespace ReportPortal.XUnitReporter.V3.LogHandler
                 AssemblyUniqueID = iTest.TestCase.TestMethod.TestClass.TestCollection.TestAssembly.UniqueID,
                 Output = serializedMessage
             };
-    
+
             m.Invoke(messageBusValue, new object[] { testOutput });
         }
     }

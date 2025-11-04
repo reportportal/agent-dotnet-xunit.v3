@@ -5,7 +5,7 @@ using System.Collections.Concurrent;
 using Xunit.Runner.Common;
 using Xunit.Sdk;
 
-namespace ReportPortal.XUnitReporter.V3
+namespace ReportPortal.XUnitReporter
 {
     public partial class ReportPortalReporterMessageHandler : DefaultRunnerReporterMessageHandler, IRunnerReporterMessageHandler
     {
@@ -25,7 +25,7 @@ namespace ReportPortal.XUnitReporter.V3
             _diagnosticMessageSink = diagnosticMessageSink;
 
             _service = new Shared.Reporter.Http.ClientServiceBuilder(configuration).Build();
-            
+
             Execution.TestAssemblyStartingEvent += TestAssemblyExecutionStarting;
             Execution.TestAssemblyFinishedEvent += TestAssemblyExecutionFinished;
 

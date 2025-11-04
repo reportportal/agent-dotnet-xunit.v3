@@ -1,7 +1,7 @@
 ﻿using ReportPortal.Client.Abstractions.Models;
 using System;
 
-namespace ReportPortal.XUnitReporter.V3.LogHandler.Messages
+namespace ReportPortal.XUnitReporter.LogHandler.Messages
 {
     class AddLogCommunicationMessage : BaseCommunicationMessage
     {
