@@ -2,8 +2,8 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
   <PropertyGroup>
-    <_ReportPortal_XUnit_Runtime_Path>$(MSBuildThisFileDirectory)..\..\lib\netcoreapp3.1\ReportPortal.XUnit.V3.reporters.dll</_ReportPortal_XUnit_Runtime_Path>
-    <_ReportPortal_XUnit_Runtime_Pdb_Path>$(MSBuildThisFileDirectory)..\..\lib\netcoreapp3.1\ReportPortal.XUnit.V3.reporters.pdb</_ReportPortal_XUnit_Runtime_Pdb_Path>
+    <_ReportPortal_XUnit_Runtime_Path>$(MSBuildThisFileDirectory)..\..\lib\net80\ReportPortal.XUnit.reporters.dll</_ReportPortal_XUnit_Runtime_Path>
+    <_ReportPortal_XUnit_Runtime_Pdb_Path>$(MSBuildThisFileDirectory)..\..\lib\net80\ReportPortal.XUnit.reporters.pdb</_ReportPortal_XUnit_Runtime_Pdb_Path>
     <_ReportPortal_XUnit_Content_Path>$(MSBuildThisFileDirectory)..\_content</_ReportPortal_XUnit_Content_Path>
   </PropertyGroup>
 
@@ -15,13 +15,13 @@
       <Compile Include="$(_ReportPortal_XUnit_Content_Path)\ReportPortalReporterAutoRegistration.cs" />
     </ItemGroup>
     
-    <Message Text="[ReportPortal.XUnit.V3.Agent] Auto-registration file included successfully" Importance="high" Condition=" '$(Language)' == 'C#' " />
-    <Message Text="[ReportPortal.XUnit.V3.Agent] Skipping auto-registration (non-C# project detected)" Importance="high" Condition=" '$(Language)' != 'C#' " />
+    <Message Text="[ReportPortal.XUnit.Agent] Auto-registration file included successfully" Importance="high" Condition=" '$(Language)' == 'C#' " />
+    <Message Text="[ReportPortal.XUnit.Agent] Skipping auto-registration (non-C# project detected)" Importance="high" Condition=" '$(Language)' != 'C#' " />
   </Target>
 
   <!-- Add a diagnostic target to verify the build process -->
   <Target Name="_ReportPortalDiagnostics" AfterTargets="Build">
-    <Message Text="[ReportPortal.XUnit.V3.Agent] Reporter added to project." Importance="high" />
+    <Message Text="[ReportPortal.XUnit.Agent] Reporter added to project." Importance="high" />
   </Target>
 
 </Project>

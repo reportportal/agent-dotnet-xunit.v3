@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net462;netcoreapp3.1;</TargetFrameworks>
+    <TargetFrameworks>net472;net80;</TargetFrameworks>
     <AssemblyName>ReportPortal.XUnit.V3.reporters</AssemblyName>
     <RootNamespace>ReportPortal.XUnit</RootNamespace>
     <PackageId>ReportPortal.XUnit.V3</PackageId>
