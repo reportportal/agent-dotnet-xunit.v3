@@ -5,7 +5,7 @@ VisualStudioVersion = 18.0.11201.2 d18.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6A702CE5-5B21-4777-B6E5-7F9209B8ADD9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportPortal.XUnitReporter", "src\ReportPortal.XUnitReporter\ReportPortal.XUnitReporter.csproj", "{1B71B9AF-6342-8B99-3172-46A7DE4BE4BD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src\ReportPortal.XUnitReporter", "src\ReportPortal.XUnitReporter\ReportPortal.XUnitReporter.csproj", "{1B71B9AF-6342-8B99-3172-46A7DE4BE4BD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
