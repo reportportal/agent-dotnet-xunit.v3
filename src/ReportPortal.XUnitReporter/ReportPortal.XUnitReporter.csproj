@@ -41,12 +41,6 @@
     <None Include="..\..\Logo.png" Pack="true" PackagePath="\" Visible="false" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Update="ReportPortal.config.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
   <Target Name="GeneratePackageReleaseNotes" BeforeTargets="GenerateNuspec">
     <PropertyGroup>
       <PackageReleaseNotes>Please see $(RepositoryUrl)/releases/tag/v$(Version) what is new in this version.</PackageReleaseNotes>
