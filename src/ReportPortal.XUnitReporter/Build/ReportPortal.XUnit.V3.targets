@@ -2,7 +2,7 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
   <PropertyGroup>
-    <_ReportPortal_XUnit_Content_Path>$(MSBuildThisFileDirectory)..\_content</_ReportPortal_XUnit_Content_Path>
+    <_ReportPortal_XUnit_Content_Path>$(MSBuildThisFileDirectory)\_content</_ReportPortal_XUnit_Content_Path>
   </PropertyGroup>
 
   <!-- This target runs before compilation to include the auto-registration file -->
