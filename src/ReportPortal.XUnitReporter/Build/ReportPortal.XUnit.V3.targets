@@ -2,8 +2,6 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
   <PropertyGroup>
-    <_ReportPortal_XUnit_Runtime_Path>$(MSBuildThisFileDirectory)..\..\lib\net80\ReportPortal.XUnit.reporters.dll</_ReportPortal_XUnit_Runtime_Path>
-    <_ReportPortal_XUnit_Runtime_Pdb_Path>$(MSBuildThisFileDirectory)..\..\lib\net80\ReportPortal.XUnit.reporters.pdb</_ReportPortal_XUnit_Runtime_Pdb_Path>
     <_ReportPortal_XUnit_Content_Path>$(MSBuildThisFileDirectory)..\_content</_ReportPortal_XUnit_Content_Path>
   </PropertyGroup>
 
