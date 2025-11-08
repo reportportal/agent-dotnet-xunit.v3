@@ -38,7 +38,7 @@ namespace ReportPortal.XUnitReporter
                 _launchReporter = new LaunchReporter(_service, _config, null, Shared.Extensibility.ExtensionManager.Instance);
                 _launchReporter.Start(startLaunchRequest);
 
-                Logger.LogMessage("[Report Portal Agent] Start sending messages to Report Portal server");
+                Logger.LogMessage("[Report Portal] Start sending messages to Report Portal server");
 
             }
             catch (Exception exp)
@@ -54,13 +54,13 @@ namespace ReportPortal.XUnitReporter
             {
                 _launchReporter.Finish(new FinishLaunchRequest { EndTime = DateTime.UtcNow });
 
-                Logger.LogMessage("[Report Portal Agent] Waiting to finish sending all results to Report Portal server.");
+                Logger.LogMessage("[Report Portal] Waiting to finish sending all results to Report Portal server.");
 
                 var stopWatch = Stopwatch.StartNew();
 
                 //log a message saying "we're still doing stuff", to avoid the appearance of hung builds 
                 using (new Timer(
-                           _ => Logger.LogMessage($"[Report Portal Agent] Still sending results to Report Portal server..."),
+                           _ => Logger.LogMessage($"[Report Portal] Still sending results to Report Portal server..."),
                            null,
                            TimeSpan.FromMinutes(1),
                            Timeout.InfiniteTimeSpan))
@@ -68,7 +68,7 @@ namespace ReportPortal.XUnitReporter
                     _launchReporter.Sync();
                 }
 
-                Logger.LogMessage($"[Report Portal Agent] Results are sent to Report Portal server. Sync duration: {stopWatch.Elapsed}");
+                Logger.LogMessage($"[Report Portal] Results are sent to Report Portal server. Sync duration: {stopWatch.Elapsed}");
                 Logger.LogMessage(_launchReporter.StatisticsCounter.ToString());
             }
             catch (Exception exp)
