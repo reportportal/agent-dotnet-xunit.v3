@@ -33,7 +33,7 @@ namespace ReportPortal.XUnitReporter
                     Description = _config.GetValue(ConfigurationPath.LaunchDescription, "")
                 };
 
-                Shared.Extensibility.Embedded.Analytics.AnalyticsReportEventsObserver.DefineConsumer("agent-dotnet-xunit-v3");
+                Shared.Extensibility.Embedded.Analytics.AnalyticsReportEventsObserver.DefineConsumer("agent-dotnet-xunit.v3");
 
                 _launchReporter = new LaunchReporter(_service, _config, null, Shared.Extensibility.ExtensionManager.Instance);
                 _launchReporter.Start(startLaunchRequest);
