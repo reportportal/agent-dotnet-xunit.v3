@@ -32,6 +32,6 @@
     <ProjectReference Include="..\..\src\ReportPortal.XUnitReporter\ReportPortal.XUnitReporter.csproj" />
   </ItemGroup>
 
-  <!-- Noramally it is imported automatically when installed NuGet package. End user should not be aware aout it. -->
+  <!-- Normally imported automatically when the NuGet package is installed; end users should not need to add it manually. -->
   <Import Project="..\..\src\ReportPortal.XUnitReporter\Build\ReportPortal.XUnit.V3.targets" />
 </Project>
