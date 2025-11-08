@@ -39,7 +39,6 @@ namespace ReportPortal.XUnitReporter
                 _launchReporter.Start(startLaunchRequest);
 
                 Logger.LogMessage("[Report Portal Agent] Start sending messages to Report Portal server");
-                Logger.LogMessage("[Report Portal Agent] URL: " + _config.GetValue(ConfigurationPath.ServerUrl, "") + " - Project: " + _config.GetValue(ConfigurationPath.ServerProject, ""));
 
             }
             catch (Exception exp)
