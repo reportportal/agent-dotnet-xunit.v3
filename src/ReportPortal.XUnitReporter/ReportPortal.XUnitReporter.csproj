@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFrameworks>net472;net80;</TargetFrameworks>
-    <AssemblyName>ReportPortal.XUnitReporter</AssemblyName>
+    <AssemblyName>ReportPortal.XUnit</AssemblyName>
     <RootNamespace>ReportPortal.XUnitReporter</RootNamespace>
     <PackageId>ReportPortal.XUnit.V3</PackageId>
     <Description>XUnit V3 results reporter to https://reportportal.io</Description>
