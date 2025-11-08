@@ -1,0 +1,16 @@
+{
+  "enabled": true,
+  "server": {
+    "url": "https://demo.reportportal.io/",
+    "project": "default_personal",
+    "authentication": {
+      "uuid": "xunit3_5GwstglSQ8STkL2objfFAeBT0fzopMia9lBbYoEE7v899U-7yDTL8j8tqmKhBhXD"
+    }
+  },
+  "launch": {
+    "name": "xUnit v3 Demo Launch",
+    "description": "this is description",
+    "debugMode": false,
+    "tags": [ "t1", "t2" ]
+  }
+}
