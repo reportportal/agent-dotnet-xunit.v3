@@ -1,6 +1,4 @@
-﻿
-
-namespace Xunit
+﻿namespace Xunit
 {
     public static class OutputHelperExtensions
     {
