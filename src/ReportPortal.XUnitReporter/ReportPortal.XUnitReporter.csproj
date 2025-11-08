@@ -2,12 +2,12 @@
 
   <PropertyGroup>
     <TargetFrameworks>net472;net80;</TargetFrameworks>
-    <AssemblyName>ReportPortal.XUnit.V3.reporters</AssemblyName>
+    <AssemblyName>ReportPortal.XUnit.V3</AssemblyName>
     <RootNamespace>ReportPortal.XUnit</RootNamespace>
     <PackageId>ReportPortal.XUnit.V3</PackageId>
     <Description>XUnit V3 results reporter to https://reportportal.io</Description>
     <Authors>Thanos Bokias, Report Portal Community</Authors>
-    <PackageTags>xunit v3 reporter reportportal testing</PackageTags>
+    <PackageTags>xunit xunit3 reporter reportportal testing</PackageTags>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageIcon>Logo.png</PackageIcon>
     <PackageProjectUrl>https://reportportal.io</PackageProjectUrl>
