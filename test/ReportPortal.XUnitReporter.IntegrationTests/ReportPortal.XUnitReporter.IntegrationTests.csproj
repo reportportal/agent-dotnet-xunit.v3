@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <ImplicitUsings>enable</ImplicitUsings>
@@ -28,4 +28,10 @@
     <PackageReference Include="xunit.runner.visualstudio" Version="3.1.5" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\ReportPortal.XUnitReporter\ReportPortal.XUnitReporter.csproj" />
+  </ItemGroup>
+
+  <!-- Noramally it is imported automatically when installed NuGet package. End user should not be aware aout it. -->
+  <Import Project="..\..\src\ReportPortal.XUnitReporter\Build\ReportPortal.XUnit.V3.targets" />
 </Project>
