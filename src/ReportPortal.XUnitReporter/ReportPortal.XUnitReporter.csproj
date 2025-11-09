@@ -1,0 +1,47 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net472;net8.0;</TargetFrameworks>
+    <LangVersion>12.0</LangVersion>
+    <AssemblyName>ReportPortal.XUnit</AssemblyName>
+    <RootNamespace>ReportPortal.XUnitReporter</RootNamespace>
+    <PackageId>ReportPortal.XUnit.V3</PackageId>
+    <Description>XUnit V3 results reporter to https://reportportal.io</Description>
+    <Authors>Report Portal Community</Authors>
+    <PackageTags>xunit xunit3 reporter reportportal testing</PackageTags>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageIcon>Logo.png</PackageIcon>
+    <PackageProjectUrl>https://reportportal.io</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+
+    <RepositoryType>GitHub</RepositoryType>
+    <RepositoryUrl>https://github.com/reportportal/agent-dotnet-xunit.v3</RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="GitVersion.MsBuild" Version="5.10.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="ReportPortal.Shared" Version="3.10.0">
+      <PrivateAssets>contentfiles; analyzers;</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="xunit.v3.extensibility.core" Version="3.2.0" />
+    <PackageReference Include="xunit.v3.runner.common" Version="3.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Build\**\*.props" Pack="true" PackagePath="build\" />
+    <None Include="Build\**\*.targets" Pack="true" PackagePath="build\" />
+    <None Include="Build\_content\*.cs" Pack="true" PackagePath="build\_content\" />
+
+    <None Include="..\..\Logo.png" Pack="true" PackagePath="\" Visible="false" />
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" Visible="false" />
+  </ItemGroup>
+
+  <Target Name="GeneratePackageReleaseNotes" BeforeTargets="GenerateNuspec">
+    <PropertyGroup>
+      <PackageReleaseNotes>Please see $(RepositoryUrl)/releases/tag/v$(Version) what is new in this version.</PackageReleaseNotes>
+    </PropertyGroup>
+  </Target>
+</Project>

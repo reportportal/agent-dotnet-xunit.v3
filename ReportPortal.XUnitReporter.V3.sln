@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 18
+VisualStudioVersion = 18.0.11201.2
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6A702CE5-5B21-4777-B6E5-7F9209B8ADD9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportPortal.XUnitReporter", "src\ReportPortal.XUnitReporter\ReportPortal.XUnitReporter.csproj", "{1B71B9AF-6342-8B99-3172-46A7DE4BE4BD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{D85A7952-AD47-44AB-957B-5A5723A18F48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportPortal.XUnitReporter.IntegrationTests", "test\ReportPortal.XUnitReporter.IntegrationTests\ReportPortal.XUnitReporter.IntegrationTests.csproj", "{347631BA-10F7-1D31-ED06-FC2119B25BED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1B71B9AF-6342-8B99-3172-46A7DE4BE4BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B71B9AF-6342-8B99-3172-46A7DE4BE4BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B71B9AF-6342-8B99-3172-46A7DE4BE4BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B71B9AF-6342-8B99-3172-46A7DE4BE4BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{347631BA-10F7-1D31-ED06-FC2119B25BED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{347631BA-10F7-1D31-ED06-FC2119B25BED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{347631BA-10F7-1D31-ED06-FC2119B25BED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{347631BA-10F7-1D31-ED06-FC2119B25BED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1B71B9AF-6342-8B99-3172-46A7DE4BE4BD} = {6A702CE5-5B21-4777-B6E5-7F9209B8ADD9}
+		{347631BA-10F7-1D31-ED06-FC2119B25BED} = {D85A7952-AD47-44AB-957B-5A5723A18F48}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {688540DC-82FD-4C6D-9F4A-D255258B687A}
+	EndGlobalSection
+EndGlobal
