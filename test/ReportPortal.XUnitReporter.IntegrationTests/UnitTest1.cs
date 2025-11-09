@@ -21,4 +21,13 @@ public class UnitTest1
     {
         Assert.True(true);
     }
+
+    public static IEnumerable<TheoryDataRow<int>> TestData = [.. Enumerable.Range(0, 5).Select(i => new TheoryDataRow<int>(i))];
+
+    [Theory]
+    [MemberData(nameof(TestData))]
+    public void ParamTest3(int i)
+    {
+        TestContext.Current.TestOutputHelper?.WriteLine($"I am {i}");
+    }
 }
