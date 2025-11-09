@@ -17,7 +17,7 @@ This is a limitation of xUnit v3's design, where test projects are stand-alone e
 ## Installation
 Install `ReportPortal.XUnit.V3` NuGet package in your xUnit v3 test project.
 
-[![NuGet Badge](https://buildstats.info/nuget/reportportal.xunit.v3)](https://www.nuget.org/packages/reportportal.xunit.v3)
+![NuGet Version](https://img.shields.io/nuget/v/reportportal.xunit.v3)
 
 ## Configuration
 Add `ReportPortal.json` file to the test project.
