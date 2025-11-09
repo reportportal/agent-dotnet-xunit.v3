@@ -1,5 +1,6 @@
 namespace ReportPortal.XUnitReporter.IntegrationTests;
 
+[Collection("UnitTest2")]
 public class UnitTest2
 {
     [Fact]

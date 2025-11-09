@@ -5,21 +5,17 @@ using ReportPortal.Shared.Extensibility.Commands;
 using ReportPortal.Shared.Internal.Logging;
 using ReportPortal.XUnitReporter.LogHandler.Messages;
 using System;
-using System.Collections.Concurrent;
 using System.IO;
 using System.Reflection;
 using System.Text.Json;
 using Xunit;
 using Xunit.Runner.Common;
-using Xunit.Sdk;
 
 namespace ReportPortal.XUnitReporter.LogHandler
 {
     public class LogHandler : ICommandsListener
     {
         private static readonly ITraceLogger TraceLogger;
-
-        private static ConcurrentDictionary<ILogScope, ITestOutputHelper> _outputHelperMap = new ConcurrentDictionary<ILogScope, ITestOutputHelper>();
 
         public void Initialize(ICommandsSource commandsSource)
         {
@@ -35,22 +31,6 @@ namespace ReportPortal.XUnitReporter.LogHandler
             TraceLogger = TraceLogManager.Instance.WithBaseDir(currentDirectory).GetLogger<LogHandler>();
         }
 
-        public static ITestOutputHelper XunitTestOutputHelper
-        {
-            get
-            {
-                return _outputHelperMap[Context.Current.Log.Root];
-            }
-            set
-            {
-                var rootScope = Context.Current.Log.Root;
-
-                TraceLogger.Verbose($"Fixture is helping to assign ITestOutputHelper with current root scope {rootScope.GetHashCode()}...");
-
-                _outputHelperMap[rootScope] = value;
-            }
-        }
-
         private void CommandsSource_OnLogMessageCommand(Shared.Execution.ILogContext logContext, Shared.Extensibility.Commands.CommandArgs.LogMessageCommandArgs args)
         {
             var rootScope = Context.Current.Log.Root;
@@ -59,7 +39,9 @@ namespace ReportPortal.XUnitReporter.LogHandler
 
             var logScope = args.LogScope;
 
-            if (_outputHelperMap.TryGetValue(rootScope, out ITestOutputHelper output))
+            var outputHelper = TestContext.Current.TestOutputHelper;
+
+            if (outputHelper != null)
             {
                 var logRequest = args.LogMessage.ConvertToRequest();
 
@@ -76,7 +58,7 @@ namespace ReportPortal.XUnitReporter.LogHandler
                     sharedLogMessage.Attach = new Attach(logRequest.Attach.MimeType, logRequest.Attach.Data);
                 }
 
-                NotifyAgent(output, JsonSerializer.Serialize(sharedLogMessage));
+                NotifyAgent(outputHelper, JsonSerializer.Serialize(sharedLogMessage));
             }
         }
 
@@ -84,7 +66,9 @@ namespace ReportPortal.XUnitReporter.LogHandler
         {
             var logScope = args.LogScope;
 
-            if (_outputHelperMap.TryGetValue(Context.Current.Log.Root, out ITestOutputHelper output))
+            var outputHelper = TestContext.Current.TestOutputHelper;
+
+            if (outputHelper != null)
             {
                 var communicationMessage = new EndScopeCommunicationMessage
                 {
@@ -93,7 +77,7 @@ namespace ReportPortal.XUnitReporter.LogHandler
                     Status = logScope.Status
                 };
 
-                NotifyAgent(output, JsonSerializer.Serialize(communicationMessage));
+                NotifyAgent(outputHelper, JsonSerializer.Serialize(communicationMessage));
             }
         }
 
@@ -101,7 +85,9 @@ namespace ReportPortal.XUnitReporter.LogHandler
         {
             var logScope = args.LogScope;
 
-            if (_outputHelperMap.TryGetValue(Context.Current.Log.Root, out ITestOutputHelper output))
+            var outputHelper = TestContext.Current.TestOutputHelper;
+
+            if (outputHelper != null)
             {
                 var communicationMessage = new BeginScopeCommunicationMessage
                 {
@@ -111,24 +97,25 @@ namespace ReportPortal.XUnitReporter.LogHandler
                     BeginTime = logScope.BeginTime
                 };
 
-                NotifyAgent(output, JsonSerializer.Serialize(communicationMessage));
+                NotifyAgent(outputHelper, JsonSerializer.Serialize(communicationMessage));
             }
         }
 
-        private void NotifyAgent(ITestOutputHelper outputHelper, string serializedMessage)
+        private static void NotifyAgent(ITestOutputHelper outputHelper, string serializedMessage)
         {
             var type = outputHelper.GetType();
 
-            var testMember = type.GetField("test", BindingFlags.Instance | BindingFlags.NonPublic);
-            var test = testMember.GetValue(outputHelper);
+            var stateMember = type.GetField("state", BindingFlags.Instance | BindingFlags.NonPublic);
+            var state = stateMember.GetValue(outputHelper);
+            var stateType = state.GetType();
 
-            var messageBusMember = type.GetField("messageBus", BindingFlags.Instance | BindingFlags.NonPublic);
-            var messageBusValue = messageBusMember.GetValue(outputHelper);
+            var messageBusMember = stateType.GetField("messageBus", BindingFlags.Instance | BindingFlags.NonPublic);
+            var messageBusValue = messageBusMember.GetValue(state);
 
             var messageBusType = messageBusValue.GetType();
             var m = messageBusType.GetMethod("QueueMessage", BindingFlags.Instance | BindingFlags.Public);
 
-            var iTest = (ITest)test;
+            var iTest = TestContext.Current.Test;
 
             var testOutput = new TestOutput
             {
