@@ -24,7 +24,7 @@ Add `ReportPortal.json` file to the test project.
 
 ```json
 {
-  "$schema": "https://raw.githubusercontent.com/reportportal/agent-dotnet-xunit.v3/main/src/ReportPortal.XUnitReporter.V3/ReportPortal.config.schema",
+  "$schema": "https://raw.githubusercontent.com/reportportal/agent-dotnet-xunit.v3/main/ReportPortal.config.schema",
   "enabled": true,
   "server": {
     "url": "https://rp.epam.com/api/v1/",
