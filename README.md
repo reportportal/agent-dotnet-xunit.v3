@@ -1,4 +1,4 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/2ltljpbft1ofxr32/branch/master?svg=true)](https://ci.appveyor.com/project/nvborisenko/agent-net-xunit/branch/master)
+[![CI](https://github.com/reportportal/agent-dotnet-xunit.v3/actions/workflows/ci.yml/badge.svg)](https://github.com/reportportal/agent-dotnet-xunit.v3/actions/workflows/ci.yml)
 
 # ReportPortal integration for xUnit v3
 
