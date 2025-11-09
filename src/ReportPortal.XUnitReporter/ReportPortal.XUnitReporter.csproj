@@ -34,6 +34,7 @@
     <None Include="Build\**\*.props" Pack="true" PackagePath="build\" />
     <None Include="Build\**\*.targets" Pack="true" PackagePath="build\" />
     <None Include="Build\_content\*.cs" Pack="true" PackagePath="build\_content\" />
+    <Compile Remove="Build\_content\*.cs" />
 
     <None Include="..\..\Logo.png" Pack="true" PackagePath="\" Visible="false" />
     <None Include="..\..\README.md" Pack="true" PackagePath="\" Visible="false" />
