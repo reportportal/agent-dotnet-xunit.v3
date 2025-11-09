@@ -6,7 +6,7 @@
     <RootNamespace>ReportPortal.XUnitReporter</RootNamespace>
     <PackageId>ReportPortal.XUnit.V3</PackageId>
     <Description>XUnit V3 results reporter to https://reportportal.io</Description>
-    <Authors>Thanos Bokias, Report Portal Community</Authors>
+    <Authors>Report Portal Community</Authors>
     <PackageTags>xunit xunit3 reporter reportportal testing</PackageTags>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageIcon>Logo.png</PackageIcon>

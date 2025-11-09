@@ -7,19 +7,12 @@
 
   <!-- This target runs before compilation to include the auto-registration file -->
   <Target Name="_ReportPortalIncludeAutoRegistration" BeforeTargets="CoreCompile">
-    
+
     <!-- Include the auto-registration file for C# projects -->
     <ItemGroup Condition=" '$(Language)' == 'C#' ">
       <Compile Include="$(_ReportPortal_XUnit_Content_Path)\ReportPortalReporterAutoRegistration.cs" />
     </ItemGroup>
-    
-    <Message Text="[ReportPortal.XUnit.Agent] Auto-registration file included successfully" Importance="high" Condition=" '$(Language)' == 'C#' " />
-    <Message Text="[ReportPortal.XUnit.Agent] Skipping auto-registration (non-C# project detected)" Importance="high" Condition=" '$(Language)' != 'C#' " />
-  </Target>
 
-  <!-- Add a diagnostic target to verify the build process -->
-  <Target Name="_ReportPortalDiagnostics" AfterTargets="Build">
-    <Message Text="[ReportPortal.XUnit.Agent] Reporter added to project." Importance="high" />
   </Target>
 
 </Project>
