@@ -1,9 +1,8 @@
-﻿namespace ReportPortal.XUnitReporter.LogHandler.Messages
+﻿namespace ReportPortal.XUnitReporter.LogHandler.Messages;
+
+enum CommunicationAction
 {
-    enum CommunicationAction
-    {
-        AddLog,
-        BeginLogScope,
-        EndLogScope
-    }
+    AddLog,
+    BeginLogScope,
+    EndLogScope
 }

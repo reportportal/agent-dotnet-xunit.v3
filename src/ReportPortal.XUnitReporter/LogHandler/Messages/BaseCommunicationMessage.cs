@@ -1,7 +1,6 @@
-﻿namespace ReportPortal.XUnitReporter.LogHandler.Messages
+﻿namespace ReportPortal.XUnitReporter.LogHandler.Messages;
+
+class BaseCommunicationMessage
 {
-    class BaseCommunicationMessage
-    {
-        public virtual CommunicationAction Action { get; set; }
-    }
+    public virtual CommunicationAction Action { get; set; }
 }

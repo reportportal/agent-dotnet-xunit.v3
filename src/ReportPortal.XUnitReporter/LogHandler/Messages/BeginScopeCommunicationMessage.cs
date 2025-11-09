@@ -1,17 +1,16 @@
 ﻿using System;
 
-namespace ReportPortal.XUnitReporter.LogHandler.Messages
+namespace ReportPortal.XUnitReporter.LogHandler.Messages;
+
+class BeginScopeCommunicationMessage : BaseCommunicationMessage
 {
-    class BeginScopeCommunicationMessage : BaseCommunicationMessage
-    {
-        public override CommunicationAction Action { get => CommunicationAction.BeginLogScope; set => base.Action = value; }
+    public override CommunicationAction Action { get => CommunicationAction.BeginLogScope; set => base.Action = value; }
 
-        public string Id { get; set; }
+    public string Id { get; set; }
 
-        public string ParentScopeId { get; set; }
+    public string ParentScopeId { get; set; }
 
-        public string Name { get; set; }
+    public string Name { get; set; }
 
-        public DateTime BeginTime { get; set; }
-    }
+    public DateTime BeginTime { get; set; }
 }

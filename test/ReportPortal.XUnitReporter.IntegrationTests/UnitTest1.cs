@@ -12,10 +12,8 @@ public class UnitTest1
 
         Shared.Context.Current.Log.Info("This is a log message from ReportPortal context.");
 
-        using (var scope = Shared.Context.Current.Log.BeginScope("my scope 1"))
-        {
-            Shared.Context.Current.Log.Info("This is a log message from ReportPortal Scoped context.");
-        }
+        using var scope = Shared.Context.Current.Log.BeginScope("my scope 1");
+        Shared.Context.Current.Log.Info("This is a log message from ReportPortal Scoped context.");
     }
 
     [Fact]
