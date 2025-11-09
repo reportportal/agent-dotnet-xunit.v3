@@ -27,10 +27,8 @@
     <PackageReference Include="ReportPortal.Shared" Version="3.10.0">
       <PrivateAssets>contentfiles; analyzers;</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="xunit.abstractions" Version="2.0.3" />
-    <PackageReference Include="xunit.v3.common" Version="2.0.0" />
-    <PackageReference Include="xunit.v3.extensibility.core" Version="2.0.0" />
-    <PackageReference Include="xunit.v3.runner.common" Version="2.0.0" />
+    <PackageReference Include="xunit.v3.extensibility.core" Version="3.2.0" />
+    <PackageReference Include="xunit.v3.runner.common" Version="3.2.0" />
   </ItemGroup>
 
   <ItemGroup>
