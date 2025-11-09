@@ -113,7 +113,7 @@ namespace ReportPortal.XUnitReporter.LogHandler
             var messageBusValue = messageBusMember.GetValue(state);
 
             var messageBusType = messageBusValue.GetType();
-            var m = messageBusType.GetMethod("QueueMessage", BindingFlags.Instance | BindingFlags.Public);
+            var queueMessageMethod = messageBusType.GetMethod("QueueMessage", BindingFlags.Instance | BindingFlags.Public);
 
             var iTest = TestContext.Current.Test;
 
@@ -128,7 +128,7 @@ namespace ReportPortal.XUnitReporter.LogHandler
                 Output = serializedMessage
             };
 
-            m.Invoke(messageBusValue, new object[] { testOutput });
+            queueMessageMethod.Invoke(messageBusValue, [testOutput]);
         }
     }
 }

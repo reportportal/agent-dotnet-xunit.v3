@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFrameworks>net472;net8.0;</TargetFrameworks>
+    <LangVersion>12.0</LangVersion>
     <AssemblyName>ReportPortal.XUnit</AssemblyName>
     <RootNamespace>ReportPortal.XUnitReporter</RootNamespace>
     <PackageId>ReportPortal.XUnit.V3</PackageId>
