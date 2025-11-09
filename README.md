@@ -42,9 +42,6 @@ Add `ReportPortal.json` file to the test project.
 
 Read [more](https://github.com/reportportal/commons-net/blob/master/docs/Configuration.md) about configuration of other available options and alternative ways how to provide options.
 
-## Auto-Registration
-
-The ReportPortal.XUnit.V3 package includes an auto-registration mechanism that automatically registers the ReportPortal reporter with xUnit v3. This is done through MSBuild integration using .targets and .props files that are included in the package.
 
 ## Running Tests
 
