@@ -43,24 +43,6 @@ Add `ReportPortal.json` file to the test project.
 Read [more](https://github.com/reportportal/commons-net/blob/master/docs/Configuration.md) about configuration of other available options and alternative ways how to provide options.
 
 
-## Running Tests
-
-Due to xUnit v3's limitations for custom reporters, you can only use the ReportPortal reporter when running tests directly:
-
-```bash
-# Navigate to your test project directory
-cd path/to/your/test/project
-
-# Build the project
-dotnet build
-
-# Run the tests directly using the executable
-./bin/Debug/netcoreapp3.1/YourTestProject.exe
-
-# Or using dotnet run
-dotnet run
-```
-
 ### Important Limitations
 
 ⚠️ The following methods of running tests **will not work** with the ReportPortal reporter due to xUnit v3 limitations:
@@ -80,7 +62,6 @@ This is because these runners do not support custom reporters in xUnit v3.
 - [ReportPortal Documentation](https://reportportal.io/docs)
 
 
-
 ## Integrating Logger Frameworks with xUnit v3
 
 You can integrate various logging frameworks with ReportPortal:
@@ -90,35 +71,8 @@ You can integrate various logging frameworks with ReportPortal:
 - [Serilog](https://github.com/reportportal/logger-net-serilog)
 - [System.Diagnostics.TraceListener](https://github.com/reportportal/logger-net-tracelistener)
 
-In xUnit v3, you can capture test output by declaring an `ITestOutputHelper` in your test class constructor and attaching ReportPortal to it:
-
-```csharp
-using Xunit;
-using Xunit.Abstractions;
-
-public class MyTests
-{
-    private readonly ITestOutputHelper _output;
-
-    public MyTests(ITestOutputHelper output)
-    {
-        _output = output.WithReportPortal();
-    }
-
-    [Fact]
-    public void MyTest1()
-    {
-        _output.WriteLine("My message");
-        // This message will be sent to ReportPortal
-    }
-}
-```
-
 See [here](https://github.com/reportportal/commons-net/blob/master/docs/Logging.md) for more information on how to improve your logging experience with attachments or nested steps.
 
-## Contributing
-
-If you have any questions or issues with the ReportPortal xUnit v3 integration, please create an issue in the repository.
 
 ## Useful Extensions
 - [Skippable](https://github.com/nvborisenko/reportportal-extensions-skippable) marks skipped tests as `No Defect` automatically
@@ -127,6 +81,6 @@ If you have any questions or issues with the ReportPortal xUnit v3 integration, 
 
 
 # License
-ReportPortal is licensed under [Apache 2.0](https://github.com/reportportal/agent-net-xunit/blob/master/LICENSE)
+ReportPortal is licensed under [Apache 2.0](./LICENSE)
 
 We use Google Analytics for sending anonymous usage information as library's name/version and the agent's name/version when starting launch. This information might help us to improve integration with ReportPortal. Used by the ReportPortal team only and not for sharing with 3rd parties. You are able to [turn off](https://github.com/reportportal/commons-net/blob/master/docs/Configuration.md#analytics) it if needed.
