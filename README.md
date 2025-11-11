@@ -40,7 +40,7 @@ Add `ReportPortal.json` file to the test project.
 }
 ```
 
-Read [more](https://github.com/reportportal/commons-net/blob/master/docs/Configuration.md) about configuration of other available options and alternative ways how to provide options.
+Read [more](https://github.com/reportportal/client-dotnet/blob/master/docs/Configuration.md) about configuration of other available options and alternative ways how to provide options.
 
 
 ### Important Limitations
