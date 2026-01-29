@@ -17,7 +17,7 @@ class AddLogCommunicationMessage : BaseCommunicationMessage
     /// <summary>
     /// A level of log item.
     /// </summary>
-    public LogLevel Level { get; set; } = LogLevel.Info;
+    public string Level { get; set; } = "INFO";
 
     /// <summary>
     /// Message of log item.

@@ -48,7 +48,7 @@ class LogHandler : ICommandsListener
             var sharedLogMessage = new AddLogCommunicationMessage
             {
                 ParentScopeId = logScope?.Id,
-                Level = logRequest.Level,
+                Level = logRequest.LevelString,
                 Time = logRequest.Time,
                 Text = logRequest.Text
             };
