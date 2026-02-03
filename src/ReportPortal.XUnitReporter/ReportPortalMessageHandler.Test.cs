@@ -219,7 +219,7 @@ partial class ReportPortalReporterMessageHandler
         {
             Text = logMessage.Text,
             Time = logMessage.Time,
-            Level = logMessage.Level
+            LevelString = logMessage.Level
         };
 
         if (logMessage.Attach != null)
